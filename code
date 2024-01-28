@@ -1,0 +1,40 @@
+#include <LiquidCrystal.h>
+
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+
+
+char names[][17] = {
+  "PERIOD 1-8B",
+  "PERIOD 2-6B",
+  "PERIOD 3-7A",
+  "PERIOD 4-6D",
+  "PERIOD 5-8C",
+  "PERIOD 6-8D",
+  "PERIOD 7-7C",
+  "PERIOD 8-6A",
+};
+
+void setup() {
+  lcd.begin(16, 2);
+  pinMode(inp,INPUT);
+}
+
+void loop() {
+
+  lcd.clear();
+  lcd.setCursor(0, 0);
+    lcd.print("MANOJ SIR");
+    lcd.setCursor(0, 1);
+    lcd.print("TIME-TABLE");
+    delay(1000);
+    
+  for (int i = 0; i < 8; i++) {
+  
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("MANOJ SIR");
+    lcd.setCursor(0, 1);
+    lcd.print(names[i]);
+    delay(1000); 
+  }
+}
